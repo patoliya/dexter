@@ -26,13 +26,14 @@ while True :
 		if initialvalue.isIntialNotSet():
 		#if startValue == 0:
 			startValue =  distance
+			
 			#startValue = 15.0
 			initialvalue.setInitialValue(startValue)
 
 		else:
 			startValue = initialvalue.getInitialValue()
 
-		percnt = (distance/startValue)*100
+		percnt = ((startValue-distance)/startValue)*100
 		print percnt
 
 		serverflag.sendData(percnt)
