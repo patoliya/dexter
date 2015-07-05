@@ -54,7 +54,6 @@ while True :
 		initialvalue.setEmpty()
 		time.sleep(1)
 		print 'andriodnot true'
-	exit(0)
 
 
 
