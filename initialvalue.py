@@ -18,3 +18,6 @@ def getInitialValue():
 	print content
 	fo.close()
 	return content
+
+def setEmpty():
+	open("foo.txt", 'w').close()

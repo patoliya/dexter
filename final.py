@@ -25,7 +25,7 @@ while True :
 
 		if initialvalue.isIntialNotSet():
 		#if startValue == 0:
-			startValue =  15
+			startValue =  distance
 			#startValue = 15.0
 			initialvalue.setInitialValue(startValue)
 
