@@ -9,8 +9,9 @@ from random import randint
 def getRandom() :
 	return randint(0,15)
 	
-
+startValue = 0.0
 data = 'false'
+orderflag = 0
 
 while True :
 	data = serverflag.parseHtml()
@@ -18,19 +19,32 @@ while True :
 	if data == 'true' :
 
 		distance = getRandom();
+		
 		#distance = sensor.getDistance()
+		print distance
 
 		if initialvalue.isIntialNotSet():
+		#if startValue == 0:
+			startValue =  15
+			#startValue = 15.0
+			initialvalue.setInitialValue(startValue)
 
-			# startValue =  distance
-			startValue = 15;
-			initialvalue.setInitialValue(distance)
 		else:
-			startValue = getInitialValue()
+			startValue = initialvalue.getInitialValue()
 
 		percnt = (distance/startValue)*100
+		print percnt
 
 		serverflag.sendData(percnt)
+
+		if percnt < 20:
+			if orderflag == 0:
+				serverflag.order()
+				orderflag = 1
+		else:
+			orderflag = 0
+
+
 		#serverflag.sendData()
 		#parse.sendData(getRandom())
 		#serverflag.sendData()

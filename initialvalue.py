@@ -5,14 +5,16 @@ def isIntialNotSet():
 
 def setInitialValue(value):
 	fo = open("foo.txt", "w")
-
-	fo.write(value);
+	print value
+	print 'heellel'
+	fo.write(str(value));
 	fo.close()
 
 def getInitialValue():
 	fo = open("foo.txt","r")	
-	content = fo.read(8);
+	content = float(fo.read(8));
 	print "this is form file file.py"
 	print "Initial value is" 
 	print content
 	fo.close()
+	return content

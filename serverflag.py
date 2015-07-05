@@ -12,9 +12,9 @@ def parseHtml():
 	#html = web.urlopen("http://172.16.1.32:3000").read()
 	#BeautifulSoup(html)
 	#print html
-	headers = {'appKey':'18fe31a8-d6d6-4cba-8eea-03b713fd34c4','Content-Type':'application/json'}
+	headers = {'appKey':'92a1c97a-0b35-45d3-ba30-d0266a1ba9fc','Content-Type':'application/json'}
 
-	url = 'https://i3liot4.cloudapp.net:8443/Thingworx/Things/Jar/Services/getStart'
+	url = 'https://i3liot7.cloudapp.net:8443/Thingworx/Things/Jar/Services/getStart'
 	
 
 	r = requests.post(url, headers=headers,verify = False)
@@ -25,8 +25,8 @@ def parseHtml():
 #print(parseHtml(html))
 
 def sendData(value):
-	headers = {'appKey':'18fe31a8-d6d6-4cba-8eea-03b713fd34c4','Content-Type':'application/json'}
-	url = 'https://i3liot4.cloudapp.net:8443/Thingworx/Things/Jar/Services/setPercnt'
+	headers = {'appKey':'92a1c97a-0b35-45d3-ba30-d0266a1ba9fc','Content-Type':'application/json'}
+	url = 'https://i3liot7.cloudapp.net:8443/Thingworx/Things/Jar/Services/setPercnt'
 	data = {'value':value}
 	r = requests.post(url,data=json.dumps(data),headers=headers,verify = False)
 	print r.text
@@ -34,3 +34,9 @@ def sendData(value):
 	#parsed_html = BeautifulSoup(html)
 	#return parsed_html.body.table.td.text
 
+def order():
+	headers = {'appKey':'92a1c97a-0b35-45d3-ba30-d0266a1ba9fc','Content-Type':'application/json'}
+	url = 'https://i3liot7.cloudapp.net:8443/Thingworx/Things/Jar/Services/incrOrder'
+	#data = {'value':value}
+	r = requests.post(url,headers=headers,verify = False)
+	print r.text
