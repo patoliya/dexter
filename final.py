@@ -50,6 +50,7 @@ while True :
 		#serverflag.sendData()
 
 	else :
+		initialvalue.setEmpty()
 		time.sleep(1)
 		print 'andriodnot true'
 	exit(0)
