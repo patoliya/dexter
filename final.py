@@ -3,7 +3,7 @@ import serverflag
 import time
 import initialvalue
 
-# import Distance as sensor
+import Distance as sensor
 from random import randint
 
 def getRandom() :
@@ -18,14 +18,14 @@ while True :
 	print data
 	if data == 'true' :
 
-		distance = getRandom();
+		#distance = getRandom();
 		
-		#distance = sensor.getDistance()
+		distance = sensor.getDistance()
 		print distance
 
 		if initialvalue.isIntialNotSet():
 		#if startValue == 0:
-			startValue =  15
+			startValue =  distance
 			#startValue = 15.0
 			initialvalue.setInitialValue(startValue)
 
